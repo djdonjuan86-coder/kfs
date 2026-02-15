@@ -82,6 +82,12 @@ export default function LivePage() {
         </div>
       </div>
 
+      {/* BOTTOM CHAT INPUT */}
+      <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 z-20" onClick={(e) => e.stopPropagation()}>
+        <input type="text" placeholder="Kirim komentar..." className="flex-1 bg-black/50 rounded-full px-4 py-2 text-sm outline-none" />
+        <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-lg">🎁</div>
+      </div>
+
       {/* PRODUCT PROMO BAR */}
       <div className="absolute bottom-24 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 z-20">
         <img src="/images/setelan-anak.webp" className="w-14 h-14 rounded-md object-cover" alt="produk" />
@@ -93,12 +99,6 @@ export default function LivePage() {
         </div>
 
         <button className="bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold">Beli</button>
-      </div>
-
-      {/* BOTTOM CHAT INPUT */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 z-20" onClick={(e) => e.stopPropagation()}>
-        <input type="text" placeholder="Kirim komentar..." className="flex-1 bg-black/50 rounded-full px-4 py-2 text-sm outline-none" />
-        <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-lg">🎁</div>
       </div>
 
       {/* POPUP */}
