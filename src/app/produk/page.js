@@ -62,24 +62,24 @@ export default function ProdukPage() {
 
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
 
-                {/* TikTok Shop Style Bottom Strip */}
-                <div className="absolute bottom-0 left-0 rounded-md px-1 py-1 flex gap-0 items-left">
+                {/* Bottom Badge Bawah Style - Colored */}
+                <div className="absolute bottom-2 left-2 right-2 flex gap-1">
                   {/* Gratis Ongkir */}
-                  <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[7px] bg-teal-500 px-2 py-1">Gratis Ongkir</span>
-                    <span className="text-[8px] bg-teal-500 font-semibold">XTRA</span>
+                  <div className="flex flex-col bg-teal-500 text-white rounded-md px-2 py-[3px] leading-tight">
+                    <span className="text-[8px] opacity-90">Gratis Ongkir</span>
+                    <span className="text-[10px] font-semibold">XTRA</span>
                   </div>
 
-                  {/* Hemat Bonus */}
-                  <div className="flex flex-col text-black leading-tight">
-                    <span className="text-[7px] bg-yellow-300">Hemat Pakai</span>
-                    <span className="text-[8px] bg-yellow-300 font-semibold">Bonus</span>
+                  {/* Hemat Pakai Bonus */}
+                  <div className="flex flex-col bg-yellow-400 text-black rounded-md px-2 py-[3px] leading-tight">
+                    <span className="text-[8px] opacity-90">Hemat Pakai</span>
+                    <span className="text-[10px] font-semibold">Bonus</span>
                   </div>
 
                   {/* COD */}
-                  <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[7px] bg-orange-500">Bayar</span>
-                    <span className="text-[8px] bg-orange-500 font-semibold">COD</span>
+                  <div className="flex flex-col bg-orange-500 text-white rounded-md px-2 py-[3px] leading-tight">
+                    <span className="text-[8px] opacity-90">Bayar</span>
+                    <span className="text-[10px] font-semibold">COD</span>
                   </div>
                 </div>
               </div>
