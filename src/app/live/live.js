@@ -42,7 +42,7 @@ export default function LivePage() {
         )}
       </div>
 
-      {/* Preview Area Fullscreen Responsif dengan Foto Blur */}
+      {/* Preview Area Fullscreen Responsif - Foto Blur */}
       <div className="w-full h-[50vh] sm:h-[80vh] md:h-[500px] relative overflow-hidden rounded-xl flex items-center justify-center">
         {/* Background Foto Blur */}
         <img
