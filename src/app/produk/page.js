@@ -63,7 +63,7 @@ export default function ProdukPage() {
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
 
                 {/* TikTok Shop Style Bottom Strip */}
-                <div className="absolute bottom-0 left-0 w-full px-1 py-1 flex gap-2 items-left">
+                <div className="absolute bottom-0 left-0 rounded-md px-2 py-1 flex gap-2 items-left">
                   {/* Gratis Ongkir */}
                   <div className="flex flex-col text-white leading-tight">
                     <span className="text-[7px] bg-teal-500">Gratis Ongkir</span>
