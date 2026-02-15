@@ -63,7 +63,7 @@ export default function ProdukPage() {
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
 
                 {/* Bottom Badges Bawah Style - Colored */}
-                <div className="absolute bottom-0 left-0 right-0 flex gap-1">
+                <div className="absolute bottom-0 left-0 right-0 flex">
                   {/* Gratis Ongkir */}
                   <div className="flex flex-col bg-teal-500 text-white px-1 py-[1px] leading-tight">
                     <span className="text-[8px] opacity-90">Gratis Ongkir</span>
