@@ -97,7 +97,7 @@ export default function LivePage() {
               Infokan Jadwal Live Berikutnya
             </p>
 
-            <a href="https://wa.me/6289675007000=Saya+mau+info+jadwal+live+mama+zafa.." className="inline-block bg-white text-pink-600 font-semibold px-5 py-2 rounded-full">
+            <a href="https://wa.me/6289675007000=Saya%20mau%20info%20jadwal%20live%20mama%20zafa.." className="inline-block bg-white text-pink-600 font-semibold px-5 py-2 rounded-full">
               Info LIVE via WhatsApp
             </a>
 
