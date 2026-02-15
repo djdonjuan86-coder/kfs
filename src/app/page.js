@@ -69,7 +69,7 @@ export default function LivePage() {
       </div>
 
       {/* 🔥 SOCIAL PROOF FLOATING */}
-      <div className="absolute bottom-52 left-4 z-30" onClick={(e) => e.stopPropagation()}>
+      <div className="absolute bottom-65 left-4 z-0" onClick={(e) => e.stopPropagation()}>
         <div className="bg-yellow-400 text-white text-xs px-4 py-2 rounded-full shadow-lg animate-pulse">Mama Tasya dan 15 orang lainnya sedang membeli produk ini</div>
       </div>
 
