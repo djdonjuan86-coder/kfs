@@ -88,7 +88,18 @@ export default function LivePage() {
         <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-lg">🎁</div>
       </div>
 
+      {/* PRODUCT PROMO BAR */}
+      <div className="absolute bottom-24 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 z-20">
+        <img src="/images/setelan-anak.webp" className="w-14 h-14 rounded-md object-cover" alt="produk" />
 
+        <div className="flex-1">
+          <p className="text-sm font-semibold">Setelan Anak Premium</p>
+          <p className="text-xs text-gray-300 line-through">Rp 199.000</p>
+          <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
+        </div>
+
+        <button className="bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold">Beli</button>
+      </div>
 
       {/* POPUP */}
       {showPopup && (
@@ -108,19 +119,6 @@ export default function LivePage() {
             </button>
           </div>
         </div>
-
-              {/* PRODUCT PROMO BAR */}
-      <div className="absolute bottom-24 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 z-20">
-        <img src="/images/setelan-anak.webp" className="w-14 h-14 rounded-md object-cover" alt="produk" />
-
-        <div className="flex-1">
-          <p className="text-sm font-semibold">Setelan Anak Premium</p>
-          <p className="text-xs text-gray-300 line-through">Rp 199.000</p>
-          <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
-        </div>
-
-        <button className="bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold">Beli</button>
-      </div>
       )}
     </div>
   );
