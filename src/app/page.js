@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="h-screen w-screen overflow-hidden bg-gray-100 flex flex-col">
+    <main className="min-h-screen w-full bg-gray-100 flex flex-col">
       <div className="p-4 text-center">
         <h1 className="text-2xl font-bold">Kids Fashion Story</h1>
         <p className="text-sm">Stylish · Spacious · Fashionable</p>
