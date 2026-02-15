@@ -46,13 +46,13 @@ export default function LivePage() {
       <div className="w-full h-[50vh] sm:h-[80vh] md:h-[500px] relative overflow-hidden rounded-xl flex items-center justify-center">
         {/* Background Foto Blur */}
         <img
-          src="https://i.ibb.co.com/cKWgqXFf/image.png" // ganti dengan foto konten nyata
+          src="/images/baju-anak.webp" // ganti dengan foto konten nyata
           alt="Preview Live"
           className="absolute inset-0 w-full h-full object-cover filter blur-sm"
         />
 
         {/* Icon Play Video */}
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 text-white-400 opacity-80 hover:opacity-100 transition-opacity cursor-pointer z-10" fill="currentColor" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 text-gray-200 opacity-80 hover:opacity-100 transition-opacity cursor-pointer z-10" fill="currentColor" viewBox="0 0 24 24">
           <path d="M8 5v14l11-7z" />
         </svg>
       </div>
