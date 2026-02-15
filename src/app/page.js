@@ -82,6 +82,19 @@ export default function LivePage() {
         </div>
       </div>
 
+      {/* PRODUCT PROMO BAR */}
+      <div className="absolute bottom-24 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 z-20">
+        <img src="/images/setelan-anak.webp" className="w-14 h-14 rounded-md object-cover" alt="produk" />
+
+        <div className="flex-1">
+          <p className="text-sm font-semibold">Setelan Anak Premium</p>
+          <p className="text-xs text-gray-300 line-through">Rp 199.000</p>
+          <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
+        </div>
+
+        <button className="bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold">Beli</button>
+      </div>
+
       {/* BOTTOM CHAT INPUT */}
       <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 z-20" onClick={(e) => e.stopPropagation()}>
         <input type="text" placeholder="Kirim komentar..." className="flex-1 bg-black/50 rounded-full px-4 py-2 text-sm outline-none" />
