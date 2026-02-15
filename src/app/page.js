@@ -3,108 +3,188 @@ import { useEffect, useState } from "react";
 
 export default function LivePage() {
   const [hearts, setHearts] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
 
-  // Generate floating hearts
+  // Floating hearts (posisi agak tengah atas)
   useEffect(() => {
     const interval = setInterval(() => {
-      setHearts((prev) => [...prev, { id: Date.now(), left: Math.random() * 80 + 10 }]);
+      setHearts((prev) => [
+        ...prev,
+        { id: Date.now(), left: Math.random() * 60 + 20 },
+      ]);
+
       setTimeout(() => {
         setHearts((prev) => prev.slice(1));
-      }, 3000);
-    }, 800);
+      }, 2500);
+    }, 700);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden text-white">
+    <div
+      className="relative w-full h-screen bg-black overflow-hidden text-white"
+      onClick={() => setShowPopup(true)}
+    >
       {/* Background */}
-      <img src="/images/baju-anak.webp" alt="Live" className="absolute inset-0 w-full h-full object-cover" />
+      <img
+        src="/images/baju-anak.webp"
+        alt="Live"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-      {/* Gradients */}
+      {/* Gradient */}
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/80 to-transparent"></div>
       <div className="absolute bottom-0 left-0 w-full h-44 bg-gradient-to-t from-black/95 to-transparent"></div>
 
       {/* TOP BAR */}
-      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
+      <div className="absolute top-4 left-4 right-4 flex items-center z-20">
         <div className="flex items-center gap-3">
-          <img src="/images/setelan-anak.webp" className="w-10 h-10 rounded-full border border-white" alt="avatar" />
+          {/* Avatar with LIVE ring */}
+          <div className="relative">
+            <span className="absolute inset-0 rounded-full border-2 border-red-500 animate-ping"></span>
+            <img
+              src="/images/setelan-anak.webp"
+              className="w-10 h-10 rounded-full border-2 border-red-500 relative"
+              alt="avatar"
+            />
+          </div>
 
           <div>
             <p className="text-sm font-semibold">@kidsfashion</p>
             <div className="flex items-center gap-2 mt-1">
-              <span className="bg-red-600 text-[10px] px-2 py-[2px] rounded font-bold">LIVE</span>
-              <span className="text-[10px] bg-black/40 px-2 py-[2px] rounded">1.2K</span>
+              <span className="bg-red-600 text-[10px] px-2 py-[2px] rounded font-bold">
+                LIVE
+              </span>
+              <span className="text-[10px] bg-black/40 px-2 py-[2px] rounded">
+                1.2K
+              </span>
             </div>
           </div>
 
-          <button className="ml-2 bg-pink-500 text-xs px-3 py-1 rounded-full font-semibold">Follow</button>
+          <button
+            className="ml-2 bg-pink-500 text-xs px-3 py-1 rounded-full font-semibold"
+            onClick={(e) => e.stopPropagation()}
+          >
+            Follow
+          </button>
         </div>
-
-        <button className="text-white text-2xl font-light">×</button>
       </div>
 
-      {/* RIGHT SIDE ACTIONS */}
-      <div className="absolute right-3 bottom-32 flex flex-col items-center gap-6 z-20">
-        <div className="flex flex-col items-center">
-          <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">❤️</div>
-          <span className="text-xs mt-1">12K</span>
-        </div>
-
-        <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">💬</div>
-
-        <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">🎁</div>
-      </div>
-
-      {/* FLOATING HEARTS */}
+      {/* ❤️ LOVE ANIMATION - AGAK TENGAH ATAS */}
       {hearts.map((heart) => (
-        <div key={heart.id} className="absolute bottom-24 text-pink-500 text-xl animate-bounce" style={{ left: `${heart.left}%` }}>
+        <div
+          key={heart.id}
+          className="absolute top-1/3 text-red-500 text-2xl animate-ping"
+          style={{ left: `${heart.left}%` }}
+        >
           ❤️
         </div>
       ))}
 
-      {/* PRODUCT PROMO BAR */}
-      <div className="absolute bottom-24 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 z-20">
-        <img src="/images/setelan-anak.webp" className="w-14 h-14 rounded-md object-cover" alt="produk" />
-
-        <div className="flex-1">
-          <p className="text-sm font-semibold">Setelan Anak Premium</p>
-          <p className="text-xs text-gray-300 line-through">Rp 199.000</p>
-          <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
+      {/* RIGHT SIDE ACTIONS */}
+      <div className="absolute right-3 bottom-32 flex flex-col items-center gap-6 z-20">
+        <div className="flex flex-col items-center">
+          <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">
+            ❤️
+          </div>
+          <span className="text-xs mt-1">12K</span>
         </div>
 
-        <button className="bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold">Beli</button>
+        <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">
+          💬
+        </div>
+
+        <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">
+          🎁
+        </div>
       </div>
 
       {/* COMMENTS */}
-      <div className="absolute bottom-40 left-4 right-20 space-y-2 text-sm z-20 max-h-40 overflow-hidden">
+      <div className="absolute bottom-28 left-4 right-20 space-y-2 text-sm z-20 max-h-40 overflow-hidden">
         <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
-          <span className="font-semibold text-pink-400">siti:</span> Kak spill detailnya..
+          <span className="font-semibold text-pink-400">siti:</span> Kak ini ready?
         </div>
         <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
           <span className="font-semibold text-yellow-400">mama_putri:</span> Warna pink ada?
         </div>
         <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
-          <span className="font-semibold text-green-400">rafi99:</span> Bisa COD kakak cantik?
+          <span className="font-semibold text-green-400">rafi99:</span> Spill harga dong kak
         </div>
       </div>
 
-      {/* BOTTOM AREA */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 z-20">
-        {/* CART ICON (YELLOW) */}
-        <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" className="w-6 h-6">
-            <path d="M7 4h-2l-1 2H2v2h2l3.6 7.59-1.35 2.45A1.99 1.99 0 0 0 8 20h10v-2H8.42a.25.25 0 0 1-.22-.37L9 16h6a2 2 0 0 0 1.8-1.11L21 8H6.42l-.94-2z" />
-            <circle cx="9" cy="21" r="1.5" />
-            <circle cx="18" cy="21" r="1.5" />
+      {/* 🛒 KERANJANG KUNING POJOK KIRI BAWAH */}
+      <div
+        className="absolute bottom-20 left-4 z-30"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative w-14 h-14 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+          {/* Cart SVG */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7 text-black"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 5.4a1 1 0 001 .6h12.7a1 1 0 001-.6L21 13M7 13h14"
+            />
           </svg>
+
+          {/* Badge jumlah */}
+          <span className="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
+            3
+          </span>
         </div>
-
-        {/* CHAT INPUT */}
-        <input type="text" placeholder="Kirim komentar..." className="flex-1 bg-black/50 rounded-full px-4 py-2 text-sm outline-none" />
-
-        <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-lg">🎁</div>
       </div>
+
+      {/* BOTTOM CHAT INPUT */}
+      <div
+        className="absolute bottom-4 left-4 right-4 flex items-center gap-3 z-20"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <input
+          type="text"
+          placeholder="Kirim komentar..."
+          className="flex-1 bg-black/50 rounded-full px-4 py-2 text-sm outline-none"
+        />
+        <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-lg">
+          🎁
+        </div>
+      </div>
+
+      {/* POPUP */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+          <div
+            className="bg-pink-500 text-white rounded-2xl px-6 py-6 text-center max-w-sm w-11/12 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className="text-lg font-semibold mb-4">
+              Ketinggalan Live? <br />
+              Infokan Jadwal Live Berikutnya
+            </p>
+
+            <a
+              href="/live"
+              className="inline-block bg-white text-pink-600 font-semibold px-5 py-2 rounded-full"
+            >
+              Info via WhatsApp
+            </a>
+
+            <button
+              onClick={() => setShowPopup(false)}
+              className="block text-sm mt-4 opacity-80"
+            >
+              Tutup
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
