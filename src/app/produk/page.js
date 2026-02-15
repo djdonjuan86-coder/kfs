@@ -63,10 +63,10 @@ export default function ProdukPage() {
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
 
                 {/* Overlay Bottom Badge 3 Column */}
-                <div className="absolute bottom-0 left-0 w-full grid grid-cols-4 text-[5px] font-small">
-                  <div className="bg-teal-500 text-white text-center py-1">Gratis Ongkir XTRA</div>
-                  <div className="bg-yellow-400 text-black text-center py-1">Hemat Pakai Bonus</div>
-                  <div className="bg-orange-500 text-white text-center py-1">COD</div>
+                <div className="absolute bottom-0 left-0 w-full grid grid-cols-4">
+                  <div className="text-white text-[7px] font-semibold bg-teal-500 px-2 py-1 rounded-md w-fit">Gratis Ongkir XTRA</div>
+                  <div className="text-black text-[7px] font-semibold bg-yellow-400 px-2 py-1 rounded-md w-fit">Hemat Pakai Bonus</div>
+                  <div className="text-white text-[10px] font-semibold bg-orange-400 px-2 py-1 rounded-md w-fit">Bayar COD</div>
                 </div>
               </div>
 
