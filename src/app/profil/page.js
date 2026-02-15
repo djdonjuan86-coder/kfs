@@ -38,7 +38,7 @@ export default function ProfilePage() {
 
             <p className="text-sm text-center text-black/70 mb-4">Untuk mengakses halaman ini dan berbelanja</p>
 
-            <a href="/api/tiktok-login?code=dummycode" className="block w-full text-center px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition">
+            <a href="/produk" className="block w-full text-center px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition">
               Login dengan TikTok
             </a>
           </div>
