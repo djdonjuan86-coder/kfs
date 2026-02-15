@@ -69,7 +69,7 @@ export default function LivePage() {
       </div>
 
       {/* 🔥 SOCIAL PROOF FLOATING */}
-      <div className="absolute bottom-65 left-4 z-30" onClick={(e) => e.stopPropagation()}>
+      <div className="absolute bottom-52 left-4 z-30" onClick={(e) => e.stopPropagation()}>
         <div className="bg-yellow-400 text-black text-xs px-1 py-1 rounded-full shadow-lg animate-pulse">Mama Tasya dan 15 orang lainnya sedang membeli produk ini</div>
       </div>
 
@@ -96,7 +96,7 @@ export default function LivePage() {
       <div className="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md px-4 py-3 flex items-center gap-3 z-30 border-t border-white/10" onClick={(e) => e.stopPropagation()}>
         <img src="/images/setelan-anak-3.webp" className="w-14 h-14 rounded-md object-cover" alt="produk" />
 
-        <div className="flex-1">
+        <div className="flex-1 rounded-md ">
           <p className="text-sm font-semibold">Setelan Anak Premium</p>
           <p className="text-xs text-gray-400 line-through">Rp 199.000</p>
           <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
