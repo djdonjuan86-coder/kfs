@@ -65,7 +65,7 @@ export default function ProdukPage() {
                 {/* Bottom Badge Bawah Style - Colored */}
                 <div className="absolute bottom-0 left-0 right-0 flex gap-1">
                   {/* Gratis Ongkir */}
-                  <div className="flex flex-col bg-teal-500 text-white rounded-md px-0 py-[1px] leading-tight">
+                  <div className="flex flex-col bg-teal-500 text-white px-1 py-[1px] leading-tight">
                     <span className="text-[8px] opacity-90">Gratis Ongkir</span>
                     <span className="text-[8px] font-semibold">XTRA</span>
                   </div>
