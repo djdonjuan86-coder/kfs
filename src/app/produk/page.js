@@ -66,20 +66,20 @@ export default function ProdukPage() {
                 <div className="absolute bottom-0 left-0 rounded-md px-0 py-1 flex gap-0 items-left">
                   {/* Gratis Ongkir */}
                   <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[7px] bg-teal-500 rounded-md">Gratis Ongkir</span>
-                    <span className="text-[8px] bg-teal-500 font-semibold rounded-md">XTRA</span>
+                    <span className="text-[7px] bg-teal-500">Gratis Ongkir</span>
+                    <span className="text-[8px] bg-teal-500 font-semibold">XTRA</span>
                   </div>
 
                   {/* Hemat Bonus */}
                   <div className="flex flex-col text-black leading-tight">
-                    <span className="text-[7px] bg-yellow-300 rounded-md">Hemat Pakai</span>
-                    <span className="text-[8px] bg-yellow-300 font-semibold rounded-md">Bonus</span>
+                    <span className="text-[7px] bg-yellow-300">Hemat Pakai</span>
+                    <span className="text-[8px] bg-yellow-300 font-semibold">Bonus</span>
                   </div>
 
                   {/* COD */}
                   <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[7px] bg-orange-500 rounded-md">Bayar</span>
-                    <span className="text-[8px] bg-orange-500 font-semibold rounded-md">COD</span>
+                    <span className="text-[7px] bg-orange-500">Bayar</span>
+                    <span className="text-[8px] bg-orange-500 font-semibold">COD</span>
                   </div>
                 </div>
               </div>
