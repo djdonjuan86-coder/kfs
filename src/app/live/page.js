@@ -55,16 +55,17 @@ export default function LivePage() {
         <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 text-gray-400 opacity-80 hover:opacity-100 transition-opacity cursor-pointer z-10" fill="currentColor" viewBox="0 0 24 24">
           <path d="M8 5v14l11-7z" />
         </svg>
-        {/* Tombol Dinamis */}
-        <div className="p-4 z-20 relative">
-          <a
-            href={liveStatus === "live" ? "#" : "https://wa.me/6289675007000?text=Ingatkan%20saya%20saat%20live%20dimulai"}
-            target="_blank"
-            className={`block text-center py-3 rounded-xl font-semibold ${liveStatus === "live" ? "bg-red-500 text-white animate-pulse" : "bg-green-500 text-white"}`}
-          >
-            {liveStatus === "live" ? "Tonton Sekarang 🔥" : "Ketinggalan Live? ➔ Ingatkan Saya via WhatsApp"}
-          </a>
-        </div>
+      </div>
+
+      {/* Tombol Dinamis */}
+      <div className="p-4 z-20 relative">
+        <a
+          href={liveStatus === "live" ? "#" : "https://wa.me/6289675007000?text=Ingatkan%20saya%20saat%20live%20dimulai"}
+          target="_blank"
+          className={`block text-center py-3 rounded-xl font-semibold ${liveStatus === "live" ? "bg-red-500 text-white animate-pulse" : "bg-green-500 text-white"}`}
+        >
+          {liveStatus === "live" ? "Tonton Sekarang 🔥" : "Ketinggalan Live? ➔ Ingatkan Saya via WhatsApp"}
+        </a>
       </div>
     </div>
   );
