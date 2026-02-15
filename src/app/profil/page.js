@@ -26,9 +26,9 @@ export default function ProfilePage() {
         </div>
       </div>
 
-      {/* Overlay login  posisi tengah-bawah */}
+      {/* Overlay login TikTok posisi tengah-bawah */}
       {!isLoggedIn && (
-        <div className="absolute left-1/2 bottom-50 -translate-x-1/2 w-11/12 max-w-sm bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center z-50 rounded-lg p-6 shadow-lg">
+        <div className="absolute left-1/2 bottom-90 -translate-x-1/2 w-11/12 max-w-sm bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center z-50 rounded-lg p-6 shadow-lg">
           <h2 className="text-lg font-bold text-center mb-2">Login dengan TikTok</h2>
           <p className="text-sm text-center text-black/70 mb-4">Untuk mengakses halaman ini dan berbelanja</p>
           <a href="/api/tiktok-login?code=dummycode" className="px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition">
