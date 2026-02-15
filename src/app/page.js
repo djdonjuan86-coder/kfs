@@ -69,20 +69,20 @@ export default function LivePage() {
       </div>
 
       {/* 🔥 SOCIAL PROOF FLOATING */}
-      <div className="absolute bottom-52 left-4 z-40" onClick={(e) => e.stopPropagation()}>
+      <div className="relative w-11/12 max-w-sm" onClick={(e) => e.stopPropagation()}>
         <div className="bg-yellow-200 text-black text-xs px-1 py-1 rounded-full shadow-lg animate-pulse">Mama Tasya dan 15 orang lainnya sedang membeli produk ini</div>
       </div>
 
       {/* COMMENTS */}
       <div className="absolute bottom-44 left-4 right-20 space-y-2 text-sm z-20 max-h-40 overflow-hidden">
         <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
-          <span className="font-semibold text-pink-400">siti:</span> Kak ini ready?
+          <span className="font-semibold text-pink-400">Banana:</span> Kak ini ready?
         </div>
         <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
           <span className="font-semibold text-yellow-400">mama_putri:</span> Warna pink ada?
         </div>
         <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
-          <span className="font-semibold text-green-400">rafi99:</span> Spill harga dong kak
+          <span className="font-semibold text-green-400">Daisy:</span> Spill harga dong kak
         </div>
       </div>
 
@@ -98,8 +98,8 @@ export default function LivePage() {
 
         <div className="flex-1 rounded-md ">
           <p className="text-sm font-semibold">Setelan Anak Premium</p>
-          <p className="text-xs text-gray-400 line-through">Rp 199.000</p>
-          <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
+          <p className="text-xs text-gray-400 line-through">Rp 129.999</p>
+          <p className="text-sm font-bold text-yellow-400">Rp 79.999</p>
         </div>
 
         <button className="bg-yellow-400 text-black text-xs px-4 py-2 rounded-full font-bold">Beli</button>
