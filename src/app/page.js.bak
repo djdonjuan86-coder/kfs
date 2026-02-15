@@ -1,0 +1,14 @@
+export default function Home() {
+  return (
+    <main style={{ padding: "40px", fontFamily: "sans-serif" }}>
+      <h1>Selamat Datang di Live Shop Saya</h1>
+      <p>Live setiap hari jam 19.00 WIB</p>
+
+      <a href="/live">
+        <button style={{ padding: "10px 20px", marginTop: "20px" }}>
+          Masuk Live Streaming
+        </button>
+      </a>
+    </main>
+  );
+}
