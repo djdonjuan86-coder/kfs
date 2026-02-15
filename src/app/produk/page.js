@@ -45,17 +45,6 @@ export default function ProdukPage() {
     <div className="p-4 bg-gray-100 min-h-screen">
       <h1 className="text-xl font-semibold mb-4">🛍 Produk Kids Fashion</h1>
 
-      <div className="flex items-center gap-3 text-orange-500">
-        {/* Location */}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z" />
-        </svg>
-
-        {/* Cart */}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5z" />
-        </svg>
-      </div>
       <div className="grid grid-cols-2 gap-4">
         {products.map((product) => {
           const discount = product.originalPrice > product.price ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : null;
@@ -74,10 +63,10 @@ export default function ProdukPage() {
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
 
                 {/* TikTok Shop Style Bottom Strip */}
-                <div className="absolute bottom-0 left-0 w-full bg-black/60 backdrop-blur-sm px-2 py-1 flex gap-2 items-center">
+                <div className="absolute bottom-0 left-0 w-full px-1 py-1 flex gap-2 items-left">
                   {/* Gratis Ongkir */}
                   <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[6px] bg-teal-500">Gratis Ongkir</span>
+                    <span className="text-[7px] bg-teal-500">Gratis Ongkir</span>
                     <span className="text-[8px] bg-teal-500 font-semibold">XTRA</span>
                   </div>
 
@@ -85,9 +74,9 @@ export default function ProdukPage() {
                   <div className="w-[1px] h-6 bg-white/30"></div>
 
                   {/* Hemat Bonus */}
-                  <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[6px] bg-yellow-400">Hemat Pakai</span>
-                    <span className="text-[8px] bg-yellow-400 font-semibold">Bonus</span>
+                  <div className="flex flex-col text-black leading-tight">
+                    <span className="text-[7px] bg-yellow-300">Hemat Pakai</span>
+                    <span className="text-[8px] bg-yellow-300 font-semibold">Bonus</span>
                   </div>
 
                   {/* Separator */}
@@ -95,7 +84,7 @@ export default function ProdukPage() {
 
                   {/* COD */}
                   <div className="flex flex-col text-white leading-tight">
-                    <span className="text-[6px] bg-orange-500">Bayar</span>
+                    <span className="text-[7px] bg-orange-500">Bayar</span>
                     <span className="text-[8px] bg-orange-500 font-semibold">COD</span>
                   </div>
                 </div>
