@@ -1,30 +1,154 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-center p-10">
-      <h1 className="text-4xl font-bold mb-4">Kids Fashion Story</h1>
-      <p className="text-s mb-3">Stylish · Spacious · Fasyhionable</p>
-      <div className="p-4 space-y-4">
-        <h1 className="text-xl font-bold">🔴 Live Streaming</h1>
+"use client";
+import { useEffect, useState } from "react";
 
-        {/* Preview Area Fullscreen Responsif dengan Foto Blur */}
-        <div className="w-full h-[50vh] sm:h-[70vh] md:h-[500px] relative overflow-hidden rounded-xl flex items-center justify-center">
-          {/* Background Foto Blur */}
+export default function LivePage() {
+  const [hearts, setHearts] = useState([]);
+
+  // Generate floating hearts
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHearts((prev) => [...prev, { id: Date.now(), left: Math.random() * 80 + 10 }]);
+      setTimeout(() => {
+        setHearts((prev) => prev.slice(1));
+      }, 3000);
+    }, 800);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="relative w-full h-screen bg-black overflow-hidden text-white">
+
+      {/* Background */}
+      <img
+        src="/images/baju-anak.webp"
+        alt="Live"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Gradients */}
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/80 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-44 bg-gradient-to-t from-black/95 to-transparent"></div>
+
+      {/* TOP BAR */}
+      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20">
+        <div className="flex items-center gap-3">
           <img
-            src="https://i.ibb.co.com/cKWgqXFf/image.png" // ganti dengan foto konten nyata oke
-            alt="Preview Live"
-            className="absolute inset-0 w-full h-full object-cover filter blur-sm"
+            src="/images/setelan-anak.webp"
+            className="w-10 h-10 rounded-full border border-white"
+            alt="avatar"
           />
 
-          {/* Icon Play Video */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-16 h-16 text-gray-400 opacity-50 hover:opacity-50 transition-opacity cursor-pointer z-10" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
+          <div>
+            <p className="text-sm font-semibold">@kidsfashion</p>
+            <div className="flex items-center gap-2 mt-1">
+              <span className="bg-red-600 text-[10px] px-2 py-[2px] rounded font-bold">
+                LIVE
+              </span>
+              <span className="text-[10px] bg-black/40 px-2 py-[2px] rounded">
+                1.2K
+              </span>
+            </div>
+          </div>
+
+          <button className="ml-2 bg-pink-500 text-xs px-3 py-1 rounded-full font-semibold">
+            Follow
+          </button>
+        </div>
+
+        <button className="text-white text-2xl font-light">×</button>
+      </div>
+
+      {/* RIGHT SIDE ACTIONS */}
+      <div className="absolute right-3 bottom-32 flex flex-col items-center gap-6 z-20">
+        <div className="flex flex-col items-center">
+          <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">
+            ❤️
+          </div>
+          <span className="text-xs mt-1">12K</span>
+        </div>
+
+        <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">
+          💬
+        </div>
+
+        <div className="w-12 h-12 bg-black/40 rounded-full flex items-center justify-center text-xl">
+          🎁
+        </div>
+      </div>
+
+      {/* FLOATING HEARTS */}
+      {hearts.map((heart) => (
+        <div
+          key={heart.id}
+          className="absolute bottom-24 text-pink-500 text-xl animate-bounce"
+          style={{ left: `${heart.left}%` }}
+        >
+          ❤️
+        </div>
+      ))}
+
+      {/* PRODUCT PROMO BAR */}
+      <div className="absolute bottom-24 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 flex items-center gap-3 z-20">
+        <img
+          src="/images/setelan-anak.webp"
+          className="w-14 h-14 rounded-md object-cover"
+          alt="produk"
+        />
+
+        <div className="flex-1">
+          <p className="text-sm font-semibold">Setelan Anak Premium</p>
+          <p className="text-xs text-gray-300 line-through">Rp 199.000</p>
+          <p className="text-sm font-bold text-yellow-400">Rp 129.000</p>
+        </div>
+
+        <button className="bg-yellow-400 text-black text-xs px-3 py-1 rounded-full font-bold">
+          Beli
+        </button>
+      </div>
+
+      {/* COMMENTS */}
+      <div className="absolute bottom-40 left-4 right-20 space-y-2 text-sm z-20 max-h-40 overflow-hidden">
+        <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
+          <span className="font-semibold text-pink-400">siti:</span> Kak ini ready?
+        </div>
+        <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
+          <span className="font-semibold text-yellow-400">mama_putri:</span> Warna pink ada?
+        </div>
+        <div className="bg-black/40 px-3 py-1 rounded-full w-fit">
+          <span className="font-semibold text-green-400">rafi99:</span> Spill harga dong kak
+        </div>
+      </div>
+
+      {/* BOTTOM AREA */}
+      <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 z-20">
+
+        {/* CART ICON (YELLOW) */}
+        <div className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="black"
+            viewBox="0 0 24 24"
+            className="w-6 h-6"
+          >
+            <path d="M7 4h-2l-1 2H2v2h2l3.6 7.59-1.35 2.45A1.99 1.99 0 0 0 8 20h10v-2H8.42a.25.25 0 0 1-.22-.37L9 16h6a2 2 0 0 0 1.8-1.11L21 8H6.42l-.94-2z"/>
+            <circle cx="9" cy="21" r="1.5"/>
+            <circle cx="18" cy="21" r="1.5"/>
           </svg>
         </div>
-        <a href="/live" className="block bg-pink-500 text-white text-center py-3 rounded-xl font-semibold">
-          Join Live Sekarang
-        </a>
+
+        {/* CHAT INPUT */}
+        <input
+          type="text"
+          placeholder="Kirim komentar..."
+          className="flex-1 bg-black/50 rounded-full px-4 py-2 text-sm outline-none"
+        />
+
+        <div className="w-10 h-10 bg-pink-500 rounded-full flex items-center justify-center text-lg">
+          🎁
+        </div>
       </div>
-      <p> </p>
-    </main>
+
+    </div>
   );
 }
