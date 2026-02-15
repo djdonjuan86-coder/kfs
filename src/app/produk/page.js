@@ -21,7 +21,6 @@ export default function ProdukPage() {
       originalPrice: 129000,
       rating: 4.9,
       sold: 100,
-      bestSeller: true,
     },
     {
       id: 2,
@@ -36,16 +35,17 @@ export default function ProdukPage() {
       id: 3,
       title: "Baju Anak Casual Elegan",
       image: "/images/setelan-anak-3.webp",
-      price: 89000,
+      price: 129000,
       originalPrice: 129000,
       rating: 4.8,
       sold: 150,
+      bestSeller: true,
     },
     {
       id: 4,
       title: "Setelan Anak OOTD Jalan Jalan",
       image: "/images/setelan-anak-4.webp",
-      price: 89000,
+      price: 75000,
       originalPrice: 129000,
       rating: 5.0,
       sold: 175,
@@ -57,42 +57,53 @@ export default function ProdukPage() {
       <h1 className="text-xl font-bold mb-4">🛍 Produk Kids Fashion</h1>
 
       <div className="grid grid-cols-2 gap-4">
-        {products.map((product) => (
-          <div key={product.id} className="bg-white rounded-2xl shadow-sm overflow-hidden relative hover:scale-105 transition-transform duration-300">
-            {/* Love Button */}
-            <div className={`absolute top-2 right-2 text-lg cursor-pointer transition-colors z-10 ${favorites[product.id] ? "text-pink-500" : "text-pink-300"}`} onClick={() => toggleFavorite(product.id)}>
-              ❤️
-            </div>
+        {products.map((product) => {
+          const discount = product.originalPrice > product.price ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : null;
 
-            {/* Image Area */}
-            <div className="w-full overflow-hidden rounded-t-2xl">
-              <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square" priority={product.id === 1} />
-            </div>
-
-            {/* Content */}
-            <div className="p-3 space-y-2">
-              <p className="text-sm font-semibold leading-tight">{product.title}</p>
-
-              {/* Harga */}
-              <div className="flex items-center gap-2">
-                <span className="text-pink-600 font-bold text-sm">Rp {product.price.toLocaleString("id-ID")}</span>
-                <span className="text-gray-400 text-xs line-through">Rp {product.originalPrice.toLocaleString("id-ID")}</span>
+          return (
+            <div key={product.id} className="bg-white rounded-2xl shadow-sm overflow-hidden relative hover:scale-105 transition-transform duration-300">
+              {/* Love Button */}
+              <div className={`absolute top-2 left-2 text-lg cursor-pointer transition-colors z-20 ${favorites[product.id] ? "text-pink-500" : "text-pink-300"}`} onClick={() => toggleFavorite(product.id)}>
+                ❤️
               </div>
 
-              {/* Badge */}
-              <div className="flex flex-wrap gap-1">
-                <span className="bg-green-100 text-green-600 text-[10px] px-2 py-0.5 rounded-md font-medium">Gratis Ongkir</span>
-                <span className="bg-blue-100 text-blue-600 text-[10px] px-2 py-0.5 rounded-md font-medium">COD</span>
+              {/* Image Area */}
+              <div className="relative w-full overflow-hidden rounded-t-2xl">
+                {/* Badge Diskon / Terlaris */}
+                {discount ? (
+                  <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md font-bold z-20 shadow">-{discount}%</div>
+                ) : (
+                  <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-md font-bold z-20 shadow">🔥 Terlaris</div>
+                )}
+
+                <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
+
+                {/* Overlay Bottom Badge */}
+                <div className="absolute bottom-0 left-0 w-full p-2 space-y-1 bg-gradient-to-t from-black/50 to-transparent">
+                  <div className="text-white text-[10px] font-semibold bg-teal-500 px-2 py-1 rounded-md w-fit">Gratis Ongkir XTRA</div>
+                  <div className="text-black text-[10px] font-semibold bg-yellow-400 px-2 py-1 rounded-md w-fit">Hemat Pakai Bonus</div>
+                </div>
               </div>
 
-              {/* Rating */}
-              <div className="flex items-center gap-2 text-xs text-gray-600 mt-1">
-                <span>⭐ {product.rating}</span>
-                <span>{product.sold}+ Terjual</span>
+              {/* Content */}
+              <div className="p-3 space-y-2">
+                <p className="text-sm font-semibold leading-tight">{product.title}</p>
+
+                {/* Harga */}
+                <div className="flex items-center gap-2">
+                  <span className="text-pink-600 font-bold text-sm">Rp {product.price.toLocaleString("id-ID")}</span>
+                  {product.originalPrice > product.price && <span className="text-gray-400 text-xs line-through">Rp {product.originalPrice.toLocaleString("id-ID")}</span>}
+                </div>
+
+                {/* Rating */}
+                <div className="flex items-center gap-2 text-xs text-gray-600 mt-1">
+                  <span>⭐ {product.rating}</span>
+                  <span>{product.sold}+ Terjual</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
