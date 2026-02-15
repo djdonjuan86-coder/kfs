@@ -55,9 +55,9 @@ export default function ProdukPage() {
               <div className="relative w-full overflow-hidden rounded-t-2xl">
                 {/* Badge Diskon / Terlaris */}
                 {discount ? (
-                  <div className="absolute top-2 right-2 bg-red-500 text-white text-[6px] px-1 py-1 rounded-md z-10 shadow">-{discount}%</div>
+                  <div className="absolute top-2 right-2 bg-red-500 text-white text-[7px] px-1 py-1 rounded-md z-10 shadow">-{discount}%</div>
                 ) : (
-                  <div className="absolute top-2 right-2 bg-orange-500 text-white text-[6px] px-1 py-1 rounded-md z-10 shadow">Terlaris</div>
+                  <div className="absolute top-2 right-2 bg-orange-500 text-white text-[8px] px-1 py-1 rounded-md z-10 shadow">Terlaris</div>
                 )}
 
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
