@@ -65,10 +65,8 @@ export default function ProdukPage() {
             </div>
 
             {/* Image Area */}
-            <div className="relative w-full aspect-square">
-              <Image src={product.image} alt={product.title} fill className="object-cover" sizes="(max-width: 768px) 50vw, 25vw" priority={product.id === 1} />
-
-              {product.bestSeller && <div className="absolute top-2 left-2 bg-red-500 text-white text-[10px] px-2 py-1 rounded-md font-bold z-10">🔥 Terlaris</div>}
+            <div className="w-full overflow-hidden rounded-t-2xl">
+              <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square" priority={product.id === 1} />
             </div>
 
             {/* Content */}
