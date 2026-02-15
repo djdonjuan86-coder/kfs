@@ -8,6 +8,6 @@
   </div>
 
   <a href="https://www.tiktok.com/@geuma_kids/live" target="_blank" rel="noopener noreferrer" className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-lg">
-    Masuk Live Sekarang
+    Masuk Live Sekarang!
   </a>
 </div>;
