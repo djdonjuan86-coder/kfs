@@ -55,18 +55,18 @@ export default function ProdukPage() {
               <div className="relative w-full overflow-hidden rounded-t-2xl">
                 {/* Badge Diskon / Terlaris */}
                 {discount ? (
-                  <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-md font-semibold z-20 shadow">-{discount}%</div>
+                  <div className="absolute top-2 right-2 bg-red-500 text-white text-xs px-0 py-1 rounded-md font-semibold z-10 shadow">-{discount}%</div>
                 ) : (
-                  <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-md font-semibold z-20 shadow">Terlaris</div>
+                  <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs px-0 py-1 rounded-md font-semibold z-10 shadow">Terlaris</div>
                 )}
 
                 <Image src={product.image} alt={product.title} width={500} height={500} className="w-full h-auto object-cover aspect-square transition-transform duration-300 hover:scale-110" priority={product.id === 1} />
 
                 {/* Overlay Bottom Badge 3 Column */}
-                <div className="absolute bottom-0 left-0 w-full grid grid-cols-4">
+                <div className="absolute bottom-0 left-0 right-0 w-full grid grid-cols-3">
                   <div className="text-white text-[7px] font-semibold bg-teal-500 px-2 py-1 rounded-md w-fit">Gratis Ongkir XTRA</div>
                   <div className="text-black text-[7px] font-semibold bg-yellow-400 px-2 py-1 rounded-md w-fit">Hemat Pakai Bonus</div>
-                  <div className="text-white text-[10px] font-semibold bg-orange-400 px-2 py-1 rounded-md w-fit">Bayar COD</div>
+                  <div className="text-white text-[7px] font-semibold bg-orange-500 px-2 py-1 rounded-md w-fit">Bayar COD</div>
                 </div>
               </div>
 
