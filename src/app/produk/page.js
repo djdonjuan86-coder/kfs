@@ -67,7 +67,7 @@ export default function ProdukPage() {
                   {/* Gratis Ongkir */}
                   <div className="flex flex-col text-white leading-tight">
                     <span className="text-[7px] bg-teal-500 px-2 py-1">Gratis Ongkir</span>
-                    <span className="text-[8px] bg-teal-500 font-semibold px-2 py-1">XTRA</span>
+                    <span className="text-[8px] bg-teal-500 font-semibold">XTRA</span>
                   </div>
 
                   {/* Hemat Bonus */}
